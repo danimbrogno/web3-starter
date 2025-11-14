@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { version } from '../package.json' assert { type: 'json' };
+import pkg from '../package.json' assert { type: 'json' };
+
+const { version } = pkg;
 
 const program = new Command();
 
@@ -13,6 +15,7 @@ program
 program
   .command('hello')
   .description('Say hello')
+
   .option('-n, --name <name>', 'Name to greet', 'World')
   .action((options) => {
     console.log(`Hello, ${options.name}!`);
@@ -27,4 +30,9 @@ program
     console.log('Platform:', process.platform);
   });
 
-program.parse();
+if (process.argv.length <= 2) {
+  program.outputHelp();
+  process.exit(0);
+}
+
+program.parse(process.argv);
