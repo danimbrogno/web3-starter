@@ -36,11 +36,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        id: setSHAs
-        uses: nrwl/nx-set-shas@v4
-        with:
-          main-branch-name: ${{ github.ref_name }}
       - run: echo "Building containers"
       - run: npm install --include=dev --legacy-peer-deps
       - name: Set Container Tag
@@ -48,4 +43,4 @@ jobs:
         run: echo "container_tag=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
       - name: Build
         id: build
-        run: INPUT_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} npx nx affected -t deploy --base=${{ steps.setSHAs.outputs.base }} --head=${{ steps.setSHAs.outputs.head }} --verbose
+        run: npm run build

@@ -9,9 +9,9 @@
       "type": "node",
       "request": "launch",
       "name": "Debug Main",
-      "runtimeExecutable": "nx",
-      "runtimeArgs": ["dev", "main"],
-      "cwd": "${workspaceFolder}/apps/main",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "serve"],
+      "cwd": "${workspaceFolder}",
       "sourceMaps": true,
       "skipFiles": ["<node_internals>/**"],
       "env": {
