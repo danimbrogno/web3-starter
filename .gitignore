@@ -38,16 +38,13 @@ testem.log
 .DS_Store
 Thumbs.db
 
-.nx/cache
-.nx/workspace-data
+.turbo
 
 .env.local
 .env.*.local
 schema.tmp.gql
 
 storybook-static
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
 tunnel-credentials.json
 
 .npm-cache

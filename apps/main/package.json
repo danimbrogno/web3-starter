@@ -1,0 +1,10 @@
+{
+  "name": "main",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "serve": "vite",
+    "test": "vitest"
+  }
+}
