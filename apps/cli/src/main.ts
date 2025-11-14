@@ -1,18 +1,38 @@
-import { formatMessage } from '@project/common';
-import { describeContract, demoContract } from '@project/contracts';
-import { getDrizzleConfig } from '@project/drizzle';
-import { createPonderConfig } from '@project/ponder-config';
+#!/usr/bin/env node
 
-function main() {
-  const greeting = formatMessage('cli');
-  const contractSummary = describeContract();
-  const database = getDrizzleConfig();
-  const ponder = createPonderConfig('local', [demoContract]);
+import { Command } from 'commander';
+import pkg from '../package.json' assert { type: 'json' };
 
-  console.log(greeting);
-  console.log(contractSummary);
-  console.log('Database configuration:', database);
-  console.log('Ponder configuration:', ponder);
+const { version } = pkg;
+
+const program = new Command();
+
+program
+  .name('cli')
+  .description('CLI application built with Commander')
+  .version(version);
+
+program
+  .command('hello')
+  .description('Say hello')
+
+  .option('-n, --name <name>', 'Name to greet', 'World')
+  .action((options) => {
+    console.log(`Hello, ${options.name}!`);
+  });
+
+program
+  .command('info')
+  .description('Show CLI information')
+  .action(() => {
+    console.log('CLI Version:', version);
+    console.log('Node Version:', process.version);
+    console.log('Platform:', process.platform);
+  });
+
+if (process.argv.length <= 2) {
+  program.outputHelp();
+  process.exit(0);
 }
 
-main();
+program.parse(process.argv);
