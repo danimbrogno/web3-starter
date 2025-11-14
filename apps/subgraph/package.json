@@ -1,0 +1,19 @@
+{
+  "name": "@project/subgraph",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.app.json",
+    "dev": "tsc -p tsconfig.app.json --watch",
+    "start": "node dist/apps/subgraph/main.js"
+  },
+  "dependencies": {
+    "@project/contracts": "*",
+    "@project/ponder-config": "*",
+    "@project/trpc": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

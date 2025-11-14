@@ -1,0 +1,20 @@
+{
+  "name": "@project/cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.app.json",
+    "dev": "tsc -p tsconfig.app.json --watch",
+    "start": "node dist/apps/cli/main.js"
+  },
+  "dependencies": {
+    "@project/common": "*",
+    "@project/contracts": "*",
+    "@project/drizzle": "*",
+    "@project/ponder-config": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
