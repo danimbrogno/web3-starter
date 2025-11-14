@@ -1,6 +1,6 @@
 # Web3 Starter
 
-This repository provides a minimal Nx workspace that wires together three applications and four supporting libraries:
+This repository provides a minimal Turborepo workspace that wires together three applications and four supporting libraries:
 
 - `apps/cli`: simple Node CLI that exercises the shared libraries.
 - `apps/main`: React front-end built with Vite.
@@ -16,7 +16,15 @@ This repository provides a minimal Nx workspace that wires together three applic
 ```bash
 npm install
 npm run build
-npm run serve
+npm run dev
 ```
+
+## Available Scripts
+
+- `npm run build` - Build all apps and libraries
+- `npm run dev` - Start development servers
+- `npm run test` - Run tests across all workspaces
+- `npm run lint` - Lint all workspaces
+- `npm run clean` - Clean build artifacts
 
 Each project is intentionally lightweight and intended to be extended to suit your needs.
