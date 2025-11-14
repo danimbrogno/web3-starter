@@ -7,9 +7,7 @@ export default defineConfig(() => ({
   resolve: {
     alias: {
       '@project/common': resolve(__dirname, '../../library/common/src'),
-      '@project/contracts': resolve(__dirname, '../../library/contracts/src'),
       '@project/drizzle': resolve(__dirname, '../../library/drizzle/src'),
-      '@project/ponder-config': resolve(__dirname, '../../library/ponder-config/src'),
       '@project/trpc': resolve(__dirname, '../../library/trpc/src')
     }
   },
