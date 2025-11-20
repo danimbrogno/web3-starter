@@ -1,0 +1,31 @@
+{
+  "name": "@web3-starter/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Smart contracts for web3-starter",
+  "scripts": {
+    "anvil": "anvil",
+    "anvil:fork": "dotenv -e .env -- anvil --fork-url $RPC_URL",
+    "deploy": "dotenv -e .env -- forge script script/Deploy.s.sol:DeployScript --rpc-url $RPC_URL --broadcast --verify",
+    "deploy:local": "forge script script/Deploy.s.sol:DeployScript --rpc-url http://localhost:8545 --broadcast",
+    "deploy:local:legacy": "forge script script/Deploy.s.sol:DeployScript --rpc-url http://localhost:8545 --broadcast --legacy",
+    "build": "forge build",
+    "test": "forge test",
+    "test:gas": "forge test --gas-report",
+    "test:coverage": "forge coverage",
+    "format": "forge fmt",
+    "lint": "forge fmt --check",
+    "env:run": "dotenv -e .env --"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^7.4.2"
+  },
+  "keywords": [
+    "solidity",
+    "foundry",
+    "smart-contracts",
+    "ethereum"
+  ],
+  "author": "",
+  "license": "MIT"
+}
