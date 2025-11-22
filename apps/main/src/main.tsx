@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
+import { FarcasterProvider } from './contexts/FarcasterContext';
 import { Root } from './routes/root';
 import { Home } from './routes/home';
 import { About } from './routes/about';
@@ -25,6 +26,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <FarcasterProvider>
+      <RouterProvider router={router} />
+    </FarcasterProvider>
   </StrictMode>
 );
